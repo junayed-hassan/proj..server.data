@@ -12,9 +12,6 @@ function App() {
  useEffect(() => {
   try {
     async function getData() {
-      // const conn = await fetch("http://localhost:3000/products");
-      // const data = await conn.json();
-      // setProducts(data);
       const conn = await api.get("/products");
       setProducts(conn.data);
     }
@@ -28,9 +25,6 @@ function App() {
  useEffect(() => {
   try {
     async function getCategory() {
-      // const cate = await fetch("http://localhost:3000/categories");
-      // const cateData = await cate.json();
-      // setCategory(cateData);
       const cate = await api.get("/categories");
       setCategory(cate.data);
     }  
@@ -44,7 +38,6 @@ function App() {
     <>
     <div className="grid grid-cols-12 px-16 py-7 bg-gray-100 gap-7">
      <Sidebar category={category}/>
-     {/* <Products products={products}/> */}
      <CreateProducts/>
     </div>
     </>
